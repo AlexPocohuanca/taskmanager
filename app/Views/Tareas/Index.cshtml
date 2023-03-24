@@ -1,0 +1,65 @@
+﻿@model IEnumerable<TaskManager.Models.Tarea>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreTarea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescTarea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dificultad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tiempo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdListaNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdResponsableNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreTarea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescTarea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dificultad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tiempo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdListaNavigation.IdLista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdResponsableNavigation.IdResponsable)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdTarea">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdTarea">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdTarea">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

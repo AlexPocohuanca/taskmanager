@@ -1,0 +1,43 @@
+﻿@model TaskManager.Models.Responsable
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="mt-4">Añadir Responsable al Grupo de Trabajo</h1>
+
+<h4>Responsable</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3 form-group">
+                <label asp-for="NombreResponsable" class="control-label"><b>Nombre del Responsable</b></label>
+                <input asp-for="NombreResponsable" class="form-control" />
+                <span asp-validation-for="NombreResponsable" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-group">
+                <label asp-for="ApellidoResponsable" class="control-label"><b>Apellido del Responsable</b></label>
+                <input asp-for="ApellidoResponsable" class="form-control" />
+                <span asp-validation-for="ApellidoResponsable" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-group">
+                <label asp-for="Telefono" class="control-label"><b>Teléfono del Responsable</b></label>
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-group">
+                <input type="submit" value="Añadir Responsable" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a style="text-decoration: none; color:green;" class="bi bi-arrow-return-left icon-green" asp-controller="Home" asp-action="Index"><b> Volver al tablero</b></a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

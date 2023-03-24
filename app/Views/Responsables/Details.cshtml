@@ -1,0 +1,36 @@
+﻿@model TaskManager.Models.Responsable
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="mt-4">Detalles del Responsable</h1>
+
+<div>
+    <h4>Responsable</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nombre del Responsable
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreResponsable)
+        </dd>
+        <dt class = "col-sm-2">
+            Apellido del Responsable
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ApellidoResponsable)
+        </dd>
+        <dt class = "col-sm-2">
+            Teléfono del Responsable
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a style="text-decoration: none;color:green;" class="bi bi-pencil-fill icon-green" asp-action="Edit" asp-route-id="@Model?.IdResponsable"><b> Editar información del Responsable</b></a> |
+    <a style="text-decoration: none;color:green;" class="bi bi-arrow-return-left icon-green" asp-controller="Home" asp-action="Index"><b> Volver al tablero</b></a>
+</div>

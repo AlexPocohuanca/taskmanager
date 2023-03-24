@@ -1,0 +1,40 @@
+﻿@model TaskManager.Models.Responsable
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="mt-4">Eliminar Responsable</h1>
+
+<h3>¿Estás seguro de que quieres eliminar a esta persona?</h3>
+<i>Al hacerlo eliminarás todas las tareas que tenía asignada esta persona y no podrás recuperarlas</i>
+<div>
+    <h4>Responsable</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nombre del Responsable
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreResponsable)
+        </dd>
+        <dt class = "col-sm-2">
+            Apellido del Responsable
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ApellidoResponsable)
+        </dd>
+        <dt class = "col-sm-2">
+            Teléfono del Responsable
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdResponsable" />
+        <input type="submit" value="Delete" class="btn btn-success" /> |
+        <a style="text-decoration: none; color:green;" class="bi bi-arrow-return-left icon-green" asp-controller="Home" asp-action="Index"><b> Volver al tablero</b></a>
+    </form>
+</div>

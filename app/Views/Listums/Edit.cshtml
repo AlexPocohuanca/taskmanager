@@ -1,0 +1,39 @@
+﻿@model TaskManager.Models.Listum
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="mt-4">Editar Lista</h1>
+
+<h4>Lista</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdLista" />
+            <div class="mb-3 form-group">
+                <label asp-for="NombreLista" class="control-label"><b>Nombre de la lista</b></label>
+                <input asp-for="NombreLista" class="form-control" />
+                <span asp-validation-for="NombreLista" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-group">
+                <label asp-for="Tipo" class="control-label"><b>Tipo de lista</b></label>
+                <input asp-for="Tipo" class="form-control" />
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-group">
+                <input type="submit" value="Guardar lista" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a style="text-decoration: none;" class="bi bi-arrow-return-left" asp-controller="Home" asp-action="Index"><b> Volver al tablero</b></a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

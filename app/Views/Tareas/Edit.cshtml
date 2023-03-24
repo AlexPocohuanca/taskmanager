@@ -1,0 +1,59 @@
+﻿@model TaskManager.Models.Tarea
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="mt-5">Editar Tarea</h1>
+
+<h4>Tarea</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdTarea" />
+            <div class="mb-3 form-group">
+                <label asp-for="IdLista" class="control-label"><b>Lista</b></label>
+                <select asp-for="IdLista" class="form-control" asp-items="ViewBag.IdLista"></select>
+                <span asp-validation-for="IdLista" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-group">
+                <label asp-for="NombreTarea" class="control-label"><b>Nombre de la tarea</b></label>
+                <input asp-for="NombreTarea" class="form-control" />
+                <span asp-validation-for="NombreTarea" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-group">
+                <label asp-for="DescTarea" class="control-label"><b>Descripción corta</b></label>
+                <input asp-for="DescTarea" class="form-control" />
+                <span asp-validation-for="DescTarea" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-group">
+                <label asp-for="Dificultad" class="control-label"><b>Dificultad</b></label>
+                <input asp-for="Dificultad" class="form-control" />
+                <span asp-validation-for="Dificultad" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-group">
+                <label asp-for="IdResponsable" class="control-label"><b>Responsable</b></label>
+                <select asp-for="IdResponsable" class="form-control" asp-items="ViewBag.IdResponsable"></select>
+                <span asp-validation-for="IdResponsable" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-group">
+                <label asp-for="Tiempo" class="control-label"><b>Tiempo aproximado</b></label>
+                <input asp-for="Tiempo" class="form-control" />
+                <span asp-validation-for="Tiempo" class="text-danger"></span>
+            </div>
+            <div class="mt-3 mb-3 form-group">
+                <input type="submit" value="Guardar tarea" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a style="text-decoration: none;" class="bi bi-arrow-return-left" asp-controller="Home" asp-action="Index"><b> Volver al tablero</b></a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

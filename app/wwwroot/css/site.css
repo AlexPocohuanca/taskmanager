@@ -1,0 +1,107 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    
+}
+
+body {
+  margin-bottom: 60px;
+}
+header {
+    display:none;
+}
+
+.main-name{
+    margin-top:30px;
+}
+.vh-75 {
+    height: 85vh;
+}
+.footerlistaa {
+    /*overflow: hidden;*/
+    white-space:nowrap;
+    overflow:hidden;
+}
+
+
+.mostrarmas {
+    background-color:cadetblue;
+    border-radius:5px;
+    display:inline-block;
+    vertical-align:top;
+    transition: all 0.5s ease;
+    width:100%;
+}
+.opcioneslista {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    transition: all 0.5s ease;
+    text-align: center;
+}
+.footerlistaa:hover .opcioneslista {
+    transform: translateX(-100%);
+}
+.footerlistaa:hover .mostrarmas {
+    transform: translateX(-120%);
+}
+
+
+
+.listaopt {
+        
+        transition: all 0.5s ease;
+}
+    .listaopt:hover {
+        background-color: lightblue;
+        border-radius: 15px;
+    }
+
+.icon-red {
+    color: red;
+}
+.icon-white {
+    color: white;
+}
+.icon-green {
+    color: green;
+}
+.despopcionestarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: cornflowerblue;
+    
+    transition: all 1s ease;
+    height: 100%;
+}
+
+.opcionestarea {
+    transition: all 0.5s ease;
+}
+
+.colcontainer {
+    overflow: hidden;
+    
+}
+.colcontainer:hover .despopcionestarea{
+    transform:translateY(-100%);
+}
+.colcontainer:hover .opcionestarea{
+    transform:translateY(-130%);
+}

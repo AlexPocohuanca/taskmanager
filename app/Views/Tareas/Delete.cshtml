@@ -1,0 +1,58 @@
+﻿@model TaskManager.Models.Tarea
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="mt-5">Eliminar tarea</h1>
+
+<h3>¿Estás seguro de querer eliminar esta tarea? </h3>
+<i>No podrás recuperarla pero la lista a la que pertenece no será afectada</i>
+<div>
+    <h4>Tarea</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nombre de la tarea
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreTarea)
+        </dd>
+        <dt class = "col-sm-2">
+            Descripción corta
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DescTarea)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Dificultad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Dificultad)
+        </dd>
+        <dt class = "col-sm-2">
+            Tiempo aproximado
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tiempo)
+        </dd>
+        <dt class = "col-sm-2">
+            Lista
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdListaNavigation.NombreLista)
+        </dd>
+        <dt class = "col-sm-2">
+            Responsable
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdResponsableNavigation.NombreCompletoResponsable)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdTarea" />
+        <input class="btn btn-danger" type="submit" value=" Eliminar tarea" /> |
+        <a style="text-decoration: none;" class="bi bi-arrow-return-left" asp-controller="Home" asp-action="Index"><b> Volver al tablero</b></a>
+    </form>
+</div>

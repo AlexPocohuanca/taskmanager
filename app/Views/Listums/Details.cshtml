@@ -1,0 +1,30 @@
+﻿@model TaskManager.Models.Listum
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="mt-4">Detalles de la lista</h1>
+
+<div>
+    <h4>Lista</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nombre de la lista
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreLista)
+        </dd>
+        <dt class = "col-sm-2">
+            Tipo de lista
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a style="text-decoration: none;" class="bi bi-pencil-fill" asp-action="Edit" asp-route-id="@Model?.IdLista"><b> Editar lista</b></a> |
+    <a style="text-decoration: none;" class="bi bi-arrow-return-left" asp-controller="Home" asp-action="Index"><b> Volver al tablero</b></a>
+</div>
